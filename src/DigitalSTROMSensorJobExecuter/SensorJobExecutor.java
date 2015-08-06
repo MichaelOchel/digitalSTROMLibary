@@ -1,15 +1,15 @@
-package DigitalSTROMSensorJobExecuter;
+package digitalSTROMSensorJobExecuter;
 
-import DSServerConnection.DigitalstromConnectionManager;
-import DigitalSTROMSensorJobExecuter.SensorJob.SensorJob;
-import GeneralConstants.DigitalSTROMConfig;
+import digitalSTROMConfiguration.DigitalSTROMConfig;
+import digitalSTROMManager.DigitalstromConnectionManager;
+import digitalSTROMSensorJobExecuter.sensorJob.SensorJob;
 
 
 
 /**
  * This class performs the sensor Jobs by DigitalSTROM Rule 9 "Application processes that do automatic 
  * cyclic reads of measured values are subject to a request limit: at maximum one request per minute
- * and circuit is allowed.". 
+ * and circuit is allowed.". <p>
  * In addition priorities can be assigned to jobs .
  * 
  * @author Michael Ochel

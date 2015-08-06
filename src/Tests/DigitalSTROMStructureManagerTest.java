@@ -1,4 +1,4 @@
-package Tests;
+package tests;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -11,13 +11,13 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
-import DSServerConnection.DigitalSTROMAPI;
-import DSServerConnection.impl.DigitalSTROMJSONImpl;
-import DigitalSTROMDevices.Apartment;
-import DigitalSTROMDevices.DetailedGroupInfo;
-import DigitalSTROMDevices.Device;
-import DigitalSTROMDevices.DigitalSTROMStructureManager;
-import DigitalSTROMDevices.Zone;
+import digitalSTROMManager.impl.DigitalSTROMStructureManagerImpl;
+import digitalSTROMServerConnection.DigitalSTROMAPI;
+import digitalSTROMServerConnection.impl.DigitalSTROMJSONImpl;
+import digitalSTROMStructure.Apartment;
+import digitalSTROMStructure.DetailedGroupInfo;
+import digitalSTROMStructure.Zone;
+import digitalSTROMStructure.digitalSTROMDevices.Device;
 
 public class DigitalSTROMStructureManagerTest {
 
@@ -28,7 +28,7 @@ public class DigitalSTROMStructureManagerTest {
 	
 	private List<Device> deviceList;
 	private Apartment apartment;
-	private DigitalSTROMStructureManager strucMan; 
+	private DigitalSTROMStructureManagerImpl strucMan; 
 	
 	@Before
 	public void setUp() throws Exception {
@@ -37,7 +37,7 @@ public class DigitalSTROMStructureManagerTest {
 		deviceList = dssAPI.getApartmentDevices(sessionToken, false);
 		//System.out.println(deviceList);
 		apartment = dssAPI.getApartmentStructure(sessionToken);
-		strucMan = new DigitalSTROMStructureManager(deviceList);
+		strucMan = new DigitalSTROMStructureManagerImpl(deviceList);
 	}
 	
 	@Test

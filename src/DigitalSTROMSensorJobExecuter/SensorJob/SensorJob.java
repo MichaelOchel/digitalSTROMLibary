@@ -6,14 +6,10 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package DigitalSTROMSensorJobExecuter.SensorJob;
+package digitalSTROMSensorJobExecuter.sensorJob;
 
-import DSServerConnection.DigitalSTROMAPI;
-import DigitalSTROMDevices.DeviceParameters.DSID;
-
-
-
-
+import digitalSTROMServerConnection.DigitalSTROMAPI;
+import digitalSTROMStructure.digitalSTROMDevices.deviceParameters.DSID;
 
 /**
  * Interface for a DigitalSTROM-Sensor-Jobs.

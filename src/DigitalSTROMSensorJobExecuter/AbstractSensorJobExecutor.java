@@ -1,15 +1,15 @@
-package DigitalSTROMSensorJobExecuter;
+package digitalSTROMSensorJobExecuter;
 
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import DSServerConnection.DigitalSTROMAPI;
-import DSServerConnection.DigitalstromConnectionManager;
-import DigitalSTROMDevices.Device;
-import DigitalSTROMDevices.DeviceParameters.DSID;
-import DigitalSTROMSensorJobExecuter.SensorJob.SensorJob;
-import GeneralConstants.DigitalSTROMConfig;
+import digitalSTROMConfiguration.DigitalSTROMConfig;
+import digitalSTROMManager.DigitalstromConnectionManager;
+import digitalSTROMSensorJobExecuter.sensorJob.SensorJob;
+import digitalSTROMServerConnection.DigitalSTROMAPI;
+import digitalSTROMStructure.digitalSTROMDevices.Device;
+import digitalSTROMStructure.digitalSTROMDevices.deviceParameters.DSID;
 
 public abstract class AbstractSensorJobExecutor {
 
@@ -135,6 +135,10 @@ public abstract class AbstractSensorJobExecutor {
 		addSensorJobToCircuitScheduler(sensorJob);
 	}
 
+	/**
+	 * 
+	 * @param sensorJob
+	 */
 	protected void addSensorJobToCircuitScheduler(SensorJob sensorJob){
 		synchronized (this.circuitSchedulerList) {
 			CircuitScheduler circuit = getCircuitScheduler(sensorJob.getMeterDSID());

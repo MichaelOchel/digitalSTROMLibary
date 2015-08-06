@@ -1,7 +1,7 @@
-package DigitalSTROMSensorJobExecuter;
+package digitalSTROMSensorJobExecuter;
 
-import DSServerConnection.DigitalstromConnectionManager;
-import DigitalSTROMSensorJobExecuter.SensorJob.SensorJob;
+import digitalSTROMManager.DigitalstromConnectionManager;
+import digitalSTROMSensorJobExecuter.sensorJob.SensorJob;
 
 
 
@@ -9,7 +9,14 @@ import DigitalSTROMSensorJobExecuter.SensorJob.SensorJob;
  * This class performs the sensor Jobs by DigitalSTROM Rule 9 "Application processes that do automatic 
  * cyclic reads of measured values are subject to a request limit: at maximum one request per minute
  * and circuit is allowed.". 
- * In addition priorities can be assigned to jobs .
+ * 
+ * In addition priorities can be assigned to jobs therefor an {@link SceneSensorJobExecutor} offers the methods
+ * {@link #addHighPriorityJob()}, {@link #addLowPriorityJob()} and {@link #addLowPriorityJob()}.
+ * <p>
+ * Note: 
+ * In contrast to the {@link SensorJobExecutor} the {@link SceneSensorJobExecutor} will execute {@link SensorJob}s with high priority 
+ * always before medium priority {@link SensorJob}s and so on.  
+ * 
  * 
  * @author Michael Ochel
  * @author Matthias Siegele
@@ -17,6 +24,10 @@ import DigitalSTROMSensorJobExecuter.SensorJob.SensorJob;
  */
 public class SceneSensorJobExecutor extends AbstractSensorJobExecutor {
 	
+	/**
+	 * 
+	 * @param connectionManager
+	 */
 	public SceneSensorJobExecutor(DigitalstromConnectionManager connectionManager) {
 		super(connectionManager);
 	}

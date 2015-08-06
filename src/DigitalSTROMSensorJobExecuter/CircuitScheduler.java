@@ -1,12 +1,12 @@
-package DigitalSTROMSensorJobExecuter;
+package digitalSTROMSensorJobExecuter;
 
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.PriorityQueue;
 
-import DigitalSTROMDevices.DeviceParameters.DSID;
-import DigitalSTROMSensorJobExecuter.SensorJob.SensorJob;
-import GeneralConstants.DigitalSTROMConfig;
+import digitalSTROMConfiguration.DigitalSTROMConfig;
+import digitalSTROMSensorJobExecuter.sensorJob.SensorJob;
+import digitalSTROMStructure.digitalSTROMDevices.deviceParameters.DSID;
 
 
 
